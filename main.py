@@ -1,13 +1,11 @@
 import os
 import sys
-from PyQt5.QtWidgets import QApplication, QFileDialog, QInputDialog, QMessageBox
-from VTFLibWrapper.VTFLibEnums import ImageFormat
+from PyQt5.QtWidgets import QApplication, QFileDialog, QInputDialog
 import VTFLibWrapper.VTFLib as VTFLib
 import VTFLibWrapper.VTFLibEnums as VTFLibEnums
 from PIL import Image
-import numpy as np
+from numpy import asarray, uint8
 from ctypes import create_string_buffer
-from VTFLibWrapper.VTFLibEnums import ImageFormat
 
 vtf_lib = VTFLib.VTFLib()
 
@@ -15,8 +13,8 @@ STICKER_W_MAX = 512
 STICKER_H_MAX = 512
 
 def export_texture(texture, path, imageFormat=None): # Exports an image to VTF using VTFLib
-    image_data = (np.asarray(texture)*-1) * 255
-    image_data = image_data.astype(np.uint8, copy=False)
+    image_data = (asarray(texture)*-1) * 255
+    image_data = image_data.astype(uint8, copy=False)
     def_options = vtf_lib.create_default_params_structure()
     if imageFormat.startswith('RGBA8888'):
         def_options.ImageFormat = VTFLibEnums.ImageFormat.ImageFormatRGBA8888
