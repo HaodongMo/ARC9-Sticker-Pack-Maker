@@ -9,4 +9,6 @@ It's simple!
 
 Input images should be SQUARE!
 
+Either use Python 3.10 to run the repo (Don't forget to install requirements.txt) or download an EXE release.
+
 Uses GanonMaster's VTFLibWrapper.
