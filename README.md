@@ -7,6 +7,6 @@ It's simple!
 2. Input your desired images and follow the input prompts
 3. Get your finished Gmod addon! This can be put right into your /addons folder, and published using GMPublisher.
 
-EXE release soon, right now use Python 3.10
+Input images should be SQUARE!
 
 Uses GanonMaster's VTFLibWrapper.
